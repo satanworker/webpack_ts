@@ -5,4 +5,4 @@ var test = new TestComponent()
 
 $(document).ready(function() {
     console.log(test.test())
-})
+});
