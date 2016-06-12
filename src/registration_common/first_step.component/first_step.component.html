@@ -1,0 +1,136 @@
+<p class="heading">Create my profile</p>
+<form [ngFormModel]="form" (ngSubmit)="onSubmit(f.value)">
+    <div class="clearfix">
+        <div class="col-md-8 text_container">
+            <div class="line clearfix">
+                <div class="col-md-4 text">
+                    <p>Title</p>
+                </div>
+                <div class="col-md-8">
+                    <radio-styled [name]="'title'" [title]="'Mr'" (click)="changeModel('title', 'Mr')"></radio-styled>
+                    <radio-styled [name]="'title'" [title]="'Mrs'" (click)="changeModel('title', 'Mr')"></radio-styled>
+                    <radio-styled [name]="'title'" [title]="'Ms'" (click)="changeModel('title', 'Mr')"></radio-styled>
+                    <radio-styled [name]="'title'" [title]="'Miss'" (click)="changeModel('title', 'Mr')"></radio-styled>
+                    <input [hidden]="true" [(ngModel)]="model.title" ngControl="title"/>
+                </div>
+            </div><!-- / line -->
+
+            <div class="line clearfix">
+                <div class="col-md-4 text">
+                    <p class="title">First Name</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="normal_text" placeholder="First Name" value=""
+                           [(ngModel)]="model.first_name" ngControl="first_name" (ngModelChange)="checkAvailability()"/>
+                </div>
+            </div><!--/ line -->
+
+            <div class="line clearfix">
+                <div class="col-md-4 text">
+                    <p class="title">Last Name</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="normal_text" placeholder="Last Name"
+                           [(ngModel)]="model.last_name" ngControl="last_name" (ngModelChange)="checkAvailability()"/>
+                </div>
+            </div><!-- / line -->
+
+            <div class="line clearfix">
+                <div class="col-md-4 text">
+                    <p class="title">Email</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="email" class="normal_text" placeholder="person@company.com"
+                           [(ngModel)]="model.email" ngControl="email" (ngModelChange)="checkAvailability()"/>
+                </div>
+            </div><!-- / line -->
+
+            <div class="line clearfix">
+                <div class="col-md-4 text">
+                    <p class="title">Main No.</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" class="normal_text" placeholder="01633 326 5487"
+                           [(ngModel)]="model.main_no" ngControl="main_no" (ngModelChange)="checkAvailability()"/>
+                </div>
+            </div><!-- / line -->
+
+            <div class="line clearfix">
+                <div class="col-md-4 text">
+                    <p class="title">Mobile No.</p>
+                </div>
+                <div class="col-md-8">
+                    <input type="number" class="normal_text" placeholder="01633 326 5487"
+                           [(ngModel)]="model.mobile_no" ngControl="mobile_no" (ngModelChange)="checkAvailability()"/>
+                </div>
+            </div><!-- / line -->
+        </div><!-- / text container -->
+
+        <div class="col-md-4 upload_container">
+            <a (click)="initiateFileUpload()" class="upload">
+                <img src='./assets/img/upload.svg' alt="upload photo" id="avatar" class="img-responsive" [class.img-uploaded]="gotPhoto">
+                <span *ngIf="!gotPhoto">Add profile <br /> picture</span>
+            </a>
+            <input type="file" id="fileUploadInput" [hidden]='true' (change)="uploadFile($event)"/>
+        </div><!-- / upload container -->
+    </div> <!-- / clearfix -->
+
+    <div class="input_container_wide clearfix">
+        <div class="line clearfix">
+            <div class="col-md-4 text">
+                <p>Select Level</p>
+            </div>
+            <div class="col-md-8">
+                <radio-styled [name]="'lvl'" [title]="'School learner'" (click)="changeModel('level', 'School learner')"></radio-styled>
+                <radio-styled [name]="'lvl'" [title]="'Appreantice'" (click)="changeModel('level', 'Appreantice')"></radio-styled>
+                <radio-styled [name]="'lvl'" [title]="'Graduate'" (click)="changeModel('level', 'Graduate')"></radio-styled>
+                <radio-styled [name]="'lvl'" [title]="'Higher professional'" (click)="changeModel('level', 'Higher professional')"></radio-styled>
+                <input [hidden]="true" [(ngModel)]="model.level" ngControl="level" (ngModelChange)="checkAvailability()"/>
+            </div>
+        </div><!-- / line -->
+        <p class="heading">Address</p>
+        <div class="line clearfix">
+            <div class="col-md-4 text">
+                <p class="title">Street</p>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="normal_text" placeholder="16 Street Name"
+                       [(ngModel)]="model.street" ngControl="street" (ngModelChange)="checkAvailability()"/>
+            </div>
+        </div><!-- / line -->
+        <div class="line clearfix">
+            <div class="col-md-4 text">
+                <p class="title">Borough</p>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="normal_text" placeholder="Borough area"
+                       [(ngModel)]="model.borough" ngControl="borough" (ngModelChange)="checkAvailability()"/>
+            </div>
+        </div><!-- / line -->
+        <div class="line clearfix">
+            <div class="col-md-4 text">
+                <p class="title">Town/City</p>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="normal_text" placeholder="Town or City Name"
+                       [(ngModel)]="model.city" ngControl="city" (ngModelChange)="checkAvailability()"/>
+            </div>
+        </div><!-- / line -->
+        <div class="line clearfix">
+            <div class="col-md-4 text">
+                <p class="title">Post Code</p>
+            </div>
+            <div class="col-md-8 several_inputs">
+                <div class="col-md-5">
+                    <input type="text" class="normal_text" placeholder="XX12 3YY"
+                           [(ngModel)]="model.postCode" ngControl="postCode" (ngModelChange)="checkAvailability()"/>
+                </div>
+                <div class="col-md-7">
+                    <p class="title">Country</p>
+                    <input type="text" class="normal_text" placeholder="Gread Britain"
+                           [(ngModel)]="model.country" ngControl="country" (ngModelChange)="checkAvailability()"/>
+                </div>
+            </div>
+        </div><!-- / line -->
+    </div><!-- / input container wide -->
+</form>

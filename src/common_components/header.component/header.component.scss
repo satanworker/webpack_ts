@@ -1,0 +1,108 @@
+@import "../../scss/mixins";
+@import "../../scss/vars";
+
+:host {
+
+}
+.container {
+  padding: 20px 0;
+  border-bottom: 3px solid $blue;
+}
+
+.left {
+  position: relative;
+  a {
+    display: block;
+  }
+  img {
+    width: 100%;
+  }
+}
+//.left
+.center {
+  text-align: right;
+  padding-top: 14px;
+  .search {
+    float: left;
+    width: 40%;
+    position: relative;
+    .search_text {
+      width: 100%;
+      display: block;
+      border: 1px solid $custom_black;
+      padding: 5px 10px 5px 34px;
+      box-sizing: border-box;
+      border-radius: 16px;
+      outline: none;
+      &:focus {
+        border-color: $blue;
+      }
+      @include placeholder {
+        color: $custom_black;
+        font-weight: 300;
+      }
+    }
+    //.search_text
+    .submit {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      background: none;
+      border: none;
+      top: 7px;
+      left: 10px;
+      outline: none;
+      padding: 0;
+      svg {
+        width: 100%;
+      }
+      &:hover {
+        path {
+          fill: $blue
+        }
+      }
+      &:active {
+        transform: scale(1.1);
+      }
+    }
+  }
+  //.search
+  .header_icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    margin: 0 10px;
+    //background: url('/assets/img/header_icons_sprite.svg') no-repeat;
+    //background-size: 279.13px 40px;
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    &:hover {
+      path {
+        fill: $blue
+      }
+    }
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}
+//.center
+.right {
+  position: relative;
+  .login {
+    color: $custom_black;
+    font-weight: 500;
+    font-size: 20px;
+    background: url('./assets/img/login_icon.svg') no-repeat;
+    background-size: 36px;
+    line-height: 63px;
+    padding: 10px 0 10px 44px;
+  }
+}

@@ -1,0 +1,17 @@
+$custom_black: #1A1919;
+
+$blue: #65B8D1;
+
+$gray: #b7b7b7;
+
+$dark_gray: #444444;
+
+$background_gray: #eeeeee;
+
+$form_text_gray: #787a7a;
+
+.no_decorations {
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+}

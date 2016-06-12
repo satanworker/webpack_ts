@@ -1,0 +1,38 @@
+@import "../../scss/mixins";
+@import "../../scss/vars";
+
+:host {
+  border-top: 3px solid $blue;
+  font-size: 16px;
+  padding: 0 25px;
+  background: #fff;
+}
+
+.category {
+  padding: 25px 0;
+}
+
+.normal {
+  color: $gray;
+  margin: 25px 0;
+  display: block;
+  svg {
+    width: 33px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  @extend .no_decorations;
+  &:hover {
+    color: $blue;
+    path {
+      fill: $blue;
+    }
+  }
+}
+
+.heading {
+  margin: 0;
+  font-weight: 700;
+  color: $dark_gray;
+}

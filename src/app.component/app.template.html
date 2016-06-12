@@ -1,0 +1,15 @@
+<!--<div class="preloader" *ngIf="templateVariable == 'initial'"></div>-->
+<header class="row header" *ngIf="templateVariable !== 'index'"></header>
+<!--<div class="row common">-->
+    <!--<div-->
+            <!--[class.index]="templateVariable == 'index'"-->
+            <!--[class.container]="templateVariable !== 'index'"-->
+            <!--[class.common]="templateVariable !== 'index'"-->
+    <!--&gt;-->
+        <!--<side-nav class="col-md-3" *ngIf="templateVariable !== 'index'"></side-nav>-->
+        <!--<div class="router_container" [class.col-md-6]="templateVariable !== 'index'">-->
+            <router-outlet></router-outlet>
+        <!--</div>-->
+        <!--<accounts-nav class="col-md-3" *ngIf="templateVariable !== 'index'"></accounts-nav>-->
+    <!--</div>-->
+<!--</div>&lt;!&ndash; / common &ndash;&gt;-->

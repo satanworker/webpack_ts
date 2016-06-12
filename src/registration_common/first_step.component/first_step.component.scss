@@ -1,0 +1,109 @@
+@import "../../scss/mixins";
+@import "../../scss/vars";
+
+.line {
+  font-size: 16px;
+  padding: 10px 0;
+  .col-md-4 {
+    padding: 0;
+  }
+  .col-md-8 {
+    padding-left: 15px;
+  }
+  p {
+    margin: 0;
+  }
+  input {
+    line-height: 26px;
+    border-radius: 20px;
+    border: 1px solid $form_text_gray;
+    padding: 0 10px;
+    &.ng-invalid.ng-touched{
+      border: 1.5px solid red;
+    }
+  }
+  .normal_text {
+    display: block;
+    width: 100%;
+    outline: none;
+    @include placeholder {
+      color: $form_text_gray;
+      font-weight: 300;
+      font-size: 14px;
+    }
+  }
+  //.styles for normal input
+}
+//.line
+
+.text_container {
+  padding: 0 15px 0 0;
+  .col-md-8 {
+    padding: 0;
+  }
+}
+//.text_container
+
+.upload_container {
+  padding: 0;
+}
+//.upload_container
+
+.upload {
+  display: block;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  img {
+    margin-top: 50px;
+    &.img-uploaded{
+      max-width: 80%;
+      margin: auto;
+    }
+  }
+  span {
+    position: absolute;
+    bottom: 25px;
+    display: block;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 18px;
+}
+//.heading
+
+.input_container_wide {
+  .col-md-4 {
+    width: 21%;
+  }
+  .col-md-8 {
+    width: 79%;
+    padding: 0;
+  }
+}
+//.input_container_wide
+
+.several_inputs {
+  .col-md-5 {
+    padding: 0 15px 0 0;
+  }
+  .col-md-7 {
+    padding: 0;
+    .title {
+      display: block;
+      float: left;
+    }
+    .normal_text {
+      float: right;
+      width: auto;
+    }
+  }
+}
+//.several_inputs
+
